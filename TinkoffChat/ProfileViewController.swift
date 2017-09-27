@@ -10,16 +10,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Circle image
-        avatarImageView.layer.masksToBounds = false
-        avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
-        avatarImageView.clipsToBounds = true
+        editButton.layer.borderColor = UIColor(displayP3Red: 51/255.0, green: 102/255.0, blue: 204/255.0, alpha: 1).cgColor
+        editButton.layer.borderWidth = 2
+        editButton.layer.cornerRadius = 15
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,4 +55,9 @@ class ProfileViewController: UIViewController {
     func logMethod(_ method: String = #function) {
         print("ProfileViewController: \(method)")
     }
+    
+    // MARK: Actions
+    @IBAction func editAction(_ sender: Any) {
+    }
+    
 }
