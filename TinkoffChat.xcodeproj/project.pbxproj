@@ -8,15 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		A526982E1F768080000DC97A /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A526982D1F768080000DC97A /* Media.xcassets */; };
+		A58EAEF91F8A380B00971BD4 /* ConversationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EAEF81F8A380B00971BD4 /* ConversationsListViewController.swift */; };
+		A58EAEFB1F8A381F00971BD4 /* Conversations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58EAEFA1F8A381F00971BD4 /* Conversations.storyboard */; };
 		A5D2C6FF1F72CA0400F44A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2C6FE1F72CA0400F44A55 /* AppDelegate.swift */; };
 		A5D2C7011F72CA0400F44A55 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D2C7001F72CA0400F44A55 /* ProfileViewController.swift */; };
 		A5D2C7041F72CA0400F44A55 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D2C7021F72CA0400F44A55 /* Profile.storyboard */; };
 		A5D2C7061F72CA0400F44A55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5D2C7051F72CA0400F44A55 /* Assets.xcassets */; };
 		A5D2C7091F72CA0400F44A55 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D2C7071F72CA0400F44A55 /* LaunchScreen.storyboard */; };
+		A5EE98681F8A3B8C00EF61C5 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE98671F8A3B8C00EF61C5 /* ConversationCell.swift */; };
+		A5EE986B1F8AB02600EF61C5 /* ConversationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE986A1F8AB02600EF61C5 /* ConversationHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A526982D1F768080000DC97A /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		A58EAEF81F8A380B00971BD4 /* ConversationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsListViewController.swift; sourceTree = "<group>"; };
+		A58EAEFA1F8A381F00971BD4 /* Conversations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Conversations.storyboard; sourceTree = "<group>"; };
 		A5D2C6FB1F72CA0400F44A55 /* TinkoffChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinkoffChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5D2C6FE1F72CA0400F44A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5D2C7001F72CA0400F44A55 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		A5D2C7051F72CA0400F44A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5D2C7081F72CA0400F44A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5D2C70A1F72CA0400F44A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5EE98671F8A3B8C00EF61C5 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		A5EE986A1F8AB02600EF61C5 /* ConversationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A58EAEFC1F8A399400971BD4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A58EAEF81F8A380B00971BD4 /* ConversationsListViewController.swift */,
+				A5D2C7001F72CA0400F44A55 /* ProfileViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A58EAEFD1F8A39AF00971BD4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A58EAEFA1F8A381F00971BD4 /* Conversations.storyboard */,
+				A5D2C7021F72CA0400F44A55 /* Profile.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		A5D2C6F21F72CA0400F44A55 = {
 			isa = PBXGroup;
 			children = (
@@ -57,14 +83,24 @@
 			isa = PBXGroup;
 			children = (
 				A5D2C6FE1F72CA0400F44A55 /* AppDelegate.swift */,
-				A5D2C7001F72CA0400F44A55 /* ProfileViewController.swift */,
-				A5D2C7021F72CA0400F44A55 /* Profile.storyboard */,
+				A5EE98691F8A3B8E00EF61C5 /* Views */,
+				A58EAEFC1F8A399400971BD4 /* Controllers */,
+				A58EAEFD1F8A39AF00971BD4 /* Storyboards */,
 				A5D2C7051F72CA0400F44A55 /* Assets.xcassets */,
 				A526982D1F768080000DC97A /* Media.xcassets */,
 				A5D2C7071F72CA0400F44A55 /* LaunchScreen.storyboard */,
 				A5D2C70A1F72CA0400F44A55 /* Info.plist */,
 			);
 			path = TinkoffChat;
+			sourceTree = "<group>";
+		};
+		A5EE98691F8A3B8E00EF61C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE986A1F8AB02600EF61C5 /* ConversationHeader.swift */,
+				A5EE98671F8A3B8C00EF61C5 /* ConversationCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58EAEFB1F8A381F00971BD4 /* Conversations.storyboard in Resources */,
 				A5D2C7091F72CA0400F44A55 /* LaunchScreen.storyboard in Resources */,
 				A5D2C7061F72CA0400F44A55 /* Assets.xcassets in Resources */,
 				A526982E1F768080000DC97A /* Media.xcassets in Resources */,
@@ -140,8 +177,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5EE98681F8A3B8C00EF61C5 /* ConversationCell.swift in Sources */,
 				A5D2C7011F72CA0400F44A55 /* ProfileViewController.swift in Sources */,
 				A5D2C6FF1F72CA0400F44A55 /* AppDelegate.swift in Sources */,
+				A5EE986B1F8AB02600EF61C5 /* ConversationHeader.swift in Sources */,
+				A58EAEF91F8A380B00971BD4 /* ConversationsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
