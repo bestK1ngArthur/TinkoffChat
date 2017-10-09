@@ -10,6 +10,8 @@ import UIKit
 
 class ConversationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    let messages = ["How ar u?", "Nice)", "Super, bro. So I bought a new iPhone X before the release😎", "WOW", "🤓", "!"]
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -18,6 +20,7 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 44
+        self.tableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
     }
 
     // MARK: Table view
@@ -32,8 +35,15 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as! MessageCell
-        cell.messageLabel.text = "How ar u? How ar u? How ar u? How ar u? How ar u ?"
+        var cell = MessageCell()
+        
+        if indexPath.row % 2 == 0 {
+            cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.incomeIdentifier, for: indexPath) as! MessageCell
+        } else {
+            cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.outcomeIdentifier, for: indexPath) as! MessageCell
+        }
+        cell.messageText = messages[indexPath.row]
+        cell.configure()
         
         return cell
     }

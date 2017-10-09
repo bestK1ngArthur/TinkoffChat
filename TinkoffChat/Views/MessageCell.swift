@@ -9,18 +9,25 @@
 import UIKit
 
 protocol MessageCellConfiguration: class {
-    var text: String {get set}
+    var messageText: String {get set}
 }
 
-class MessageCell: UITableViewCell  {
+class MessageCell: UITableViewCell, MessageCellConfiguration  {
     
-    static let identifier = "MessageCell"
+    static let incomeIdentifier = "IncomeMessageCell"
+    static let outcomeIdentifier = "OutcomeMessageCell"
+    
+    var messageText: String = ""
     
     @IBOutlet weak var messageLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    }
+    
+    func configure() {
+        self.messageLabel.text = messageText
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
