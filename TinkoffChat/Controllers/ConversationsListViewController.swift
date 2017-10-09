@@ -105,4 +105,16 @@ class ConversationsListViewController: UIViewController, UITableViewDataSource, 
         return cell
     }
     
+    // MARK: Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "openConversation" {
+            let cell = sender as! ConversationCell
+            segue.destination.navigationItem.title = cell.name
+        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
 }
