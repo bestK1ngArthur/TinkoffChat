@@ -16,6 +16,7 @@ class MessageCell: UITableViewCell, MessageCellConfiguration  {
     
     static let incomeIdentifier = "IncomeMessageCell"
     static let outcomeIdentifier = "OutcomeMessageCell"
+    static let noMessagesIdentifier = "NoMessageCell"
     
     var messageText: String = ""
     

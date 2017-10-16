@@ -30,19 +30,27 @@ class ConversationViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = MessageCell()
         
-        if indexPath.row % 2 == 0 {
-            cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.incomeIdentifier, for: indexPath) as! MessageCell
+        if messages.count == 0 {
+            
+            cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.noMessagesIdentifier, for: indexPath) as! MessageCell
+            cell.messageText = "No messages yet.."
+            
         } else {
-            cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.outcomeIdentifier, for: indexPath) as! MessageCell
+            
+            if indexPath.row % 2 == 0 {
+                cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.incomeIdentifier, for: indexPath) as! MessageCell
+            } else {
+                cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.outcomeIdentifier, for: indexPath) as! MessageCell
+            }
+            cell.messageText = messages[indexPath.row]
         }
-        cell.messageText = messages[indexPath.row]
         cell.configure()
         
         return cell
